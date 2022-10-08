@@ -1,0 +1,7 @@
+version = "0.3.2"
+
+[scripts]
+serve.generic = "tailwindcss --watch -o ./tailwind.css & trunk serve"
+
+build.generic = "tailwindcss -o ./tailwind.css && trunk build"
+build.targets.windows = ["tailwindcss -o ./tailwind.css", "trunk build"]
