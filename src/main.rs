@@ -1,44 +1,34 @@
+mod components;
+
+use components::{Introduction, NavBar, Technologies};
 use yew::prelude::*;
 
-enum Msg {
-    AddOne,
+#[function_component(App)]
+fn app() -> Html {
+    html! {
+        <>
+            <NavBar />
+            <main class="bg-slate-100 flex flex-col bg-gradient-to-br from-slate-100 to-slate-400 dark:from-slate-600 dark:to-red-900">
+            <Introduction/>
+            <Technologies/>
+            </main>
+            <footer class="text-center text-black dark:text-white bg-gray-500 dark:bg-gray-800 pb-8 pt-6">{"Designed & Built by TechTheAwesome"}</footer>
+
+        </>
+    }
 }
 
-struct Model {
-    value: i64,
-}
-
-impl Component for Model {
-    type Message = Msg;
-    type Properties = ();
-
-    fn create(_ctx: &Context<Self>) -> Self {
-        Self { value: 0 }
-    }
-
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg {
-            Msg::AddOne => {
-                self.value += 1;
-                // the value has changed so we need to
-                // re-render for it to appear on the page
-                true
-            }
-        }
-    }
-
-    fn view(&self, ctx: &Context<Self>) -> Html {
-        // This gives us a component's "`Scope`" which allows us to send messages, etc to the component.
-        let link = ctx.link();
-        html! {
-            <div>
-                <button class="bg-green-700 hover:cursor-pointer m-4 p-4 hover:bg-red-100" onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
-                <p>{ self.value }</p>
-            </div>
-        }
+#[function_component(Index)]
+fn index() -> Html {
+    html! {
+        <>
+            <noscript>{"You need to enable JavaScript to run this app."}</noscript>
+            <App/>
+        </>
     }
 }
 
 fn main() {
-    yew::start_app::<Model>();
+    wasm_logger::init(wasm_logger::Config::default());
+    yew::start_app::<Index>();
 }
