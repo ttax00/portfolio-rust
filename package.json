@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-rust",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "git@github.com:TechTheAwesome/portfolio-rust.git",
+  "author": "TechTheAwesome <techtheawesome01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tw-elements": "^1.0.0-alpha12"
+  }
+}
