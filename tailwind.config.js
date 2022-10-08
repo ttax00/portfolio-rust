@@ -3,8 +3,11 @@ module.exports = {
 	content: [
 		"./src/**/*.rs"
 	],
+	darkMode: 'class',
 	theme: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [
+		require('tw-elements/dist/plugin')
+	],
 }
