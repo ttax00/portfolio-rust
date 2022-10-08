@@ -13,9 +13,7 @@ impl Component for Model {
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            value: 0,
-        }
+        Self { value: 0 }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
@@ -34,7 +32,7 @@ impl Component for Model {
         let link = ctx.link();
         html! {
             <div>
-                <button onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
+                <button class="bg-green-700 hover:cursor-pointer m-4 p-4 hover:bg-green-900" onclick={link.callback(|_| Msg::AddOne)}>{ "+1" }</button>
                 <p>{ self.value }</p>
             </div>
         }
