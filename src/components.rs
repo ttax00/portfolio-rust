@@ -64,35 +64,32 @@ pub fn nav_bar() -> Html {
 #[function_component(Introduction)]
 pub fn introduction() -> Html {
     html! {
-        <section id="introduction" class="section-commons px-8 sm:px-12 lg:px-32 grid grid-cols-2 md:grid-cols-3 content-center">
-        <div class="flex flex-col justify-center content-start col-span-2">
-            <p class="text-left mt-16 text-xl">
-                <span class="motion-safe:animation fade-in text-3xl sm:text-5xl  md:text-7xl text-blue-600 dark:text-red-700">
-                    {"Hello world! I'm Tech."}
-                </span>
-                <br />
-                <span class="motion-safe:animation delay-1s fade-in md:text-4xl">
-                    {"A multi-lingual, multi-disciplinary,"}
+        <section id="introduction" class="section-commons px-8 sm:px-12 lg:px-32 flex flex-col items-center justify-center">
+        <div class="grid grid-cols-2 md:grid-cols-3">
+            <div class="flex flex-col justify-center content-start col-span-2">
+                <p class="text-left mt-16 text-xl">
+                    <span class="motion-safe:animation fade-in text-3xl sm:text-5xl  md:text-7xl text-blue-600 dark:text-red-700">
+                        {"Hello world! I'm Tech."}
+                    </span>
+                    <br />
+                    <span class="motion-safe:animation delay-1s fade-in md:text-4xl">
+                        {"A multi-lingual, multi-disciplinary,"}
+                        <br/>
+                        {"and self-taught hobbyist developer."}
+                    </span>
+                </p>
+                <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
+                    {"I work on curious projects, with emphasis on discovery and understanding."}
                     <br/>
-                    {"and self-taught hobbyist developer."}
-                </span>
-            </p>
-            <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
-                {"I work on curious projects, with emphasis on discovery and understanding."}
-                <br/>
-                {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
-            </p>
-            <div class="motion-safe:animation delay-3s fade-in self-start mt-8">
-                <a class="btn-primary block motion-safe:animation delay-4s animate-bounce" href="https://github.com/TechTheAwesome">
-                    {"Checkout my projects on github!"}
-                </a>
+                    {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
+                </p>
             </div>
-            <div class="self-center motion-safe:animation delay-3s fade-in mt-8">
-                <a href="#technologies">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
-                        class="h-24 w-24" alt="scroll down" />
-                </a>
-            </div>
+        </div>
+        <div class="self-center motion-safe:animation delay-3s fade-in mt-8">
+            <a href="#projects">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
+                    class="h-20 w-20" alt="scroll down" />
+            </a>
         </div>
     </section>
     }
@@ -100,7 +97,22 @@ pub fn introduction() -> Html {
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
-    html! {}
+    html! {
+        <section id="projects" class="section-commons px-8 sm:px-12 lg:px-32 flex flex-col justify-center items-center text-center">
+            <span class="text-2xl sm:text-4xl text-blue-600 dark:text-red-700">{"Checkout my projects!"}</span>
+            <div class="motion-safe:animation delay-1s fade-in mt-8">
+                <a class="btn-primary block motion-safe:animation delay-1s animate-bounce" href="https://github.com/TechTheAwesome">
+                    {"Find out more on github."}
+                </a>
+            </div>
+            <div class="self-center motion-safe:animation delay-1s fade-in mt-8">
+                <a href="#technologies">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
+                        class="h-20 w-20" alt="scroll down" />
+                </a>
+            </div>
+        </section>
+    }
 }
 
 #[function_component(Technologies)]

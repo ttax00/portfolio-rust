@@ -1,6 +1,6 @@
 mod components;
 
-use components::{Introduction, NavBar, Technologies};
+use components::{Introduction, NavBar, Projects, Technologies};
 use yew::prelude::*;
 
 #[function_component(App)]
@@ -10,6 +10,7 @@ fn app() -> Html {
             <NavBar />
             <main class="bg-slate-100 flex flex-col bg-gradient-to-br from-slate-100 to-slate-400 dark:from-slate-600 dark:to-red-900">
             <Introduction/>
+            <Projects/>
             <Technologies/>
             </main>
             <footer class="text-center text-black dark:text-white bg-gray-500 dark:bg-gray-800 pb-8 pt-6">{"Designed & Built by TechTheAwesome"}</footer>
