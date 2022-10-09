@@ -10,20 +10,16 @@ pub fn nav_bar() -> Html {
     {
         let d = dark.clone();
         use_effect(move || {
+            let e = gloo_utils::document_element();
+
             if *d {
-                gloo_utils::document()
-                    .document_element()
-                    .and_then(|e| Some(e.set_class_name("dark")));
+                e.set_class_name("dark")
             } else {
-                gloo_utils::document()
-                    .document_element()
-                    .and_then(|e| Some(e.set_class_name("")));
+                e.set_class_name("")
             }
 
-            || {
-                gloo_utils::document()
-                    .document_element()
-                    .and_then(|e| Some(e.set_class_name("")));
+            move || {
+                e.set_class_name("");
             }
         })
     }
@@ -32,28 +28,34 @@ pub fn nav_bar() -> Html {
         <header class="fixed z-10 w-screen bg-gray-500 dark:bg-gray-800">
         <nav class="mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-3 gap-2">
             <div class="relative flex items-center justify-start h-16 col-span-1 md:col-span-2">
-                <a href="#introducton" class="text-black dark:text-white">{"Portfolio"}</a>
-                <div class="form-check form-switch ml-8">
+                <a href="#introduction" class="text-black dark:text-white">{"Portfolio"}</a>
+                <div class="form-check form-switch ml-4">
                     <input class="element-toggle" type="checkbox" role="switch" checked={*dark} {onclick} />
                 </div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Darkmode_moon_shining_stars.svg"
-                    class="h-10 w-10 ml-3 grayscale" alt="dark mode" />
+                <img src="./asset/moon-svgrepo-com.svg" alt="Night mode"
+                class="h-8 w-8 filter dark:invert ml-4" />
             </div>
-            <div class="relative hidden sm:flex items-center justify-end h-16 text-black dark:text-white">
-                <div class="mr-3">{"Made With:"}</div>
-                <a href="https://www.typescriptlang.org/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
-                    class="h-10 w-10 mr-3" alt="Typescript" />
-                </a>
-                <a href="https://reactjs.org/" >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                    class="object-fit h-10 w-10 mr-3" alt="React" />
-                </a>
-                <a href="https://tailwindcss.com/">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
-                    class="h-10 w-10" alt="Tailwind CSS" />
-                </a>
-            </div>
+            <ul class="relative hidden sm:flex items-center justify-end h-16 text-black dark:text-white">
+                <li class="mr-3">{"Made With:"}</li>
+                <li>
+                    <a href="https://www.rust-lang.org/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
+                        class="h-10 w-10 mr-3 filter dark:invert" alt="Rust" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://yew.rs/" >
+                        <img src="https://yew.rs/img/logo.png"
+                        class="h-10 w-10 mr-3" alt="Yew" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://tailwindcss.com/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg"
+                        class="h-10 w-10" alt="Tailwind CSS" />
+                    </a>
+                </li>
+            </ul>
         </nav>
     </header>
     }
@@ -74,7 +76,7 @@ pub fn introduction() -> Html {
                 </span>
             </p>
             <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
-                {"I primary work on curious bite-sized projects, with more emphasis on discovery and understanding."}
+                {"I work on curious projects, with emphasis on discovery and understanding the technology."}
                 {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
             </p>
             <div class="motion-safe:animation delay-3s fade-in self-start mt-8">
@@ -82,7 +84,7 @@ pub fn introduction() -> Html {
                     {"Checkout my projects on github!"}
                 </a>
             </div>
-            <div class="self-center motion-safe:animation delay-3s fade-in">
+            <div class="self-center motion-safe:animation delay-3s fade-in mt-8">
                 <a href="#technologies">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
                         class="h-24 w-24" alt="scroll down" />
@@ -91,6 +93,11 @@ pub fn introduction() -> Html {
         </div>
     </section>
     }
+}
+
+#[function_component(Projects)]
+pub fn projects() -> Html {
+    html! {}
 }
 
 #[function_component(Technologies)]
@@ -118,7 +125,8 @@ pub fn technologies() -> Html {
             </li>
             <li class="m-2">
                 <a href="https://reactjs.org/" >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" class="object-fit h-24 w-24" alt="React" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+                    class="object-fit h-24 w-24 filter brightness-75 dark:brightness-100" alt="React" />
                 </a>
             </li>
             <li class="m-2">
@@ -130,7 +138,7 @@ pub fn technologies() -> Html {
             <li class="m-2">
                 <a href="https://www.rust-lang.org/">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
-                    class="h-24 w-24" alt="Rust" />
+                    class="h-24 w-24 filter dark:invert" alt="Rust" />
                 </a>
             </li>
             <li class="m-2">
