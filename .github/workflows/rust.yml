@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: jetli/trunk-action@v0.1.0
-        with:
-          version: 'latest'
+      - uses: actions/checkout@v3
 
+      - name: get-trunk
+        run: cargo install trunk --locked
       - name: build
         run: trunk build --release
   test:
