@@ -21,7 +21,7 @@ jobs:
       - name: get-yarn-deps
         run: yarn
       - name: compile tailwind
-        run: tailwindcss -i ./index.css -o ./tailwind.css
+        run: yarn run tailwindcss -i ./index.css -o ./tailwind.css
       - name: build
         run: trunk build --release
   test:
