@@ -1,6 +1,8 @@
 # Portfolio, written in rust. 
 
-![](https://img.shields.io/github/license/TechTheAwesome/portfolio-rust?style=for-the-badge)
+[![GitHub license](https://img.shields.io/github/license/TechTheAwesome/portfolio-rust?style=for-the-badge)](https://github.com/TechTheAwesome/portfolio-rust/blob/main/LICENSE)
+[![Test Status](https://img.shields.io/github/workflow/status/techtheawesome/portfolio-rust/Rust?style=for-the-badge)](https://github.com/TechTheAwesome/holidayapi-rust/actions)
+[![](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 ## Built with
 [![Rust](https://img.shields.io/badge/Rust-111111?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/) 
