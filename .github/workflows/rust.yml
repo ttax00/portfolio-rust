@@ -18,8 +18,8 @@ jobs:
 
       - name: get-trunk
         run: cargo install trunk --locked
-      - name: get-tailwind
-        run: npm install -g tailwindcss
+      - name: get-yarn-deps
+        run: yarn
       - name: compile tailwind
         run: tailwindcss -i ./index.css -o ./tailwind.css
       - name: build
