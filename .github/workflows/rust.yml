@@ -15,9 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: rustup target add wasm32-unknown-unknown
       - uses: Swatinem/rust-cache@v2
       - uses: jetli/trunk-action@v0.1.0
-      - uses: jetli/wasm-bindgen-action@v0.1.0
 
       - name: get-yarn-deps
         run: yarn
