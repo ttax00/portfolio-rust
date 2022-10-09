@@ -1,10 +1,19 @@
 version = "0.3.2"
 
 [scripts]
-serve.generic = "tailwindcss --watch -i ./index.css -o ./tailwind.css & trunk serve"
+install = [
+	"yarn",
+	"cargo install trunk --locked",
+	"rustup target add wasm32-unknown-unknown",
+]
+
+serve.generic = "yarn run tailwindcss --watch -i ./index.css -o ./tailwind.css & trunk serve"
 serve.targets.windows = [
 	"Start-Process -NoNewWindow \"cmd.exe\" \"tailwindcss --watch -o ./tailwind.css\"",
 	"trunk serve",
 ]
 
-build.generic = ["tailwindcss -i ./index.css -o ./tailwind.css", "trunk build"]
+build.generic = [
+	"yarn run tailwindcss -i ./index.css -o ./tailwind.css",
+	"trunk build --release",
+]
