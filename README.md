@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/TechTheAwesome/portfolio-rust?style=for-the-badge)](https://github.com/TechTheAwesome/portfolio-rust/blob/main/LICENSE)
 [![Test Status](https://img.shields.io/github/workflow/status/techtheawesome/portfolio-rust/Rust?style=for-the-badge)](https://github.com/TechTheAwesome/holidayapi-rust/actions)
-[![](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![wakatime](https://wakatime.com/badge/user/4312729e-bc28-4bc0-9074-161a64a7ad20/project/f70d2cf3-160c-4ddf-b1bc-e1f64f9b4b06.svg?style=for-the-badge)](https://wakatime.com/badge/user/4312729e-bc28-4bc0-9074-161a64a7ad20/project/f70d2cf3-160c-4ddf-b1bc-e1f64f9b4b06)
 
 ## Built with
 [![Rust](https://img.shields.io/badge/Rust-111111?style=flat-square&logo=rust&logoColor=white)](https://www.rust-lang.org/) 
