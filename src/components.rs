@@ -68,15 +68,18 @@ pub fn introduction() -> Html {
         <div class="flex flex-col justify-center content-start col-span-2">
             <p class="text-left mt-16 text-xl">
                 <span class="motion-safe:animation fade-in text-3xl sm:text-5xl  md:text-7xl text-blue-600 dark:text-red-700">
-                    {"Welcome, I'm Tech."}
+                    {"Hello world! I'm Tech."}
                 </span>
                 <br />
                 <span class="motion-safe:animation delay-1s fade-in md:text-4xl">
-                    {"A multi-lingual, multi-disciplinary, self-taught hobbyist developer."}
+                    {"A multi-lingual, multi-disciplinary,"}
+                    <br/>
+                    {"and self-taught hobbyist developer."}
                 </span>
             </p>
             <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
-                {"I work on curious projects, with emphasis on discovery and understanding the technology."}
+                {"I work on curious projects, with emphasis on discovery and understanding."}
+                <br/>
                 {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
             </p>
             <div class="motion-safe:animation delay-3s fade-in self-start mt-8">
