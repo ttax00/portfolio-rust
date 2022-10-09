@@ -10,12 +10,14 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+      - uses: Swatinem/rust-cache@v2
       - uses: jetli/trunk-action@v0.1.0
+      - uses: michaelpeterswa/rust-wasm-pack-action@v1.0.0
 
       - name: get-yarn-deps
         run: yarn
@@ -23,10 +25,5 @@ jobs:
         run: yarn run tailwindcss -i ./index.css -o ./tailwind.css
       - name: build
         run: trunk build --release
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
       - name: test
         run: cargo test --verbose
