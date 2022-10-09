@@ -18,6 +18,10 @@ jobs:
 
       - name: get-trunk
         run: cargo install trunk --locked
+      - name: get-tailwind
+        run: npm install -g tailwindcss
+      - name: compile tailwind
+        run: tailwindcss -i ./index.css -o ./tailwind.css
       - name: build
         run: trunk build --release
   test:
