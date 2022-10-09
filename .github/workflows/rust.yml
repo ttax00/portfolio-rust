@@ -2,21 +2,26 @@ name: Rust
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: jetli/trunk-action@v0.1.0
-    - name: test
-      run: cargo test --verbose
-    - name: build
-      run: trunk build --release
+      - uses: jetli/trunk-action@v0.1.0
+
+      - name: build
+        run: trunk build --release
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: test
+        run: cargo test --verbose
