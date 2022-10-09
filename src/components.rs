@@ -2,13 +2,39 @@ use yew::prelude::*;
 
 #[function_component(NavBar)]
 pub fn nav_bar() -> Html {
+    let dark = use_state(|| false);
+    let onclick = {
+        let d = dark.clone();
+        Callback::from(move |_| d.set(!*d))
+    };
+    {
+        let d = dark.clone();
+        use_effect(move || {
+            if *d {
+                gloo_utils::document()
+                    .document_element()
+                    .and_then(|e| Some(e.set_class_name("dark")));
+            } else {
+                gloo_utils::document()
+                    .document_element()
+                    .and_then(|e| Some(e.set_class_name("")));
+            }
+
+            || {
+                gloo_utils::document()
+                    .document_element()
+                    .and_then(|e| Some(e.set_class_name("")));
+            }
+        })
+    }
+
     html! {
         <header class="fixed z-10 w-screen bg-gray-500 dark:bg-gray-800">
         <nav class="mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-3 gap-2">
             <div class="relative flex items-center justify-start h-16 col-span-1 md:col-span-2">
                 <a href="#introducton" class="text-black dark:text-white">{"Portfolio"}</a>
                 <div class="form-check form-switch ml-8">
-                    <input class="element-toggle" type="checkbox" role="switch"  />
+                    <input class="element-toggle" type="checkbox" role="switch" checked={*dark} {onclick} />
                 </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Darkmode_moon_shining_stars.svg"
                     class="h-10 w-10 ml-3 grayscale" alt="dark mode" />
