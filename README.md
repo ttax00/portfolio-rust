@@ -12,8 +12,8 @@
 ## Feature
 
 ## Getting started
-This project requires [trunk](https://crates.io/crates/trunk) & [yarn]();
-Uses [bonnie]() to do command aliases:
+This project requires [trunk](https://crates.io/crates/trunk) & [yarn](https://yarnpkg.com/);
+Uses [bonnie](https://crates.io/crates/bonnie) to do command aliases:
 ### Installation
 Install bonnie
 ```console
