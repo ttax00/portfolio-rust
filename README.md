@@ -29,7 +29,7 @@ Run development server:
 ```console
 bonnie serve
 ```
-build release:
+build release, defaults to `dist` folder:
 
 ```console
 bonnie build
