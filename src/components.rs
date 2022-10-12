@@ -65,41 +65,48 @@ pub fn nav_bar() -> Html {
 pub fn introduction() -> Html {
     html! {
         <section id="introduction" class="section-commons px-8 sm:px-12 lg:px-32 flex flex-col items-center justify-center">
-        <div class="grid grid-cols-2 md:grid-cols-3">
-            <div class="flex flex-col justify-center content-start col-span-2">
-                <p class="text-left mt-16 text-xl">
-                    <span class="motion-safe:animation fade-in text-3xl sm:text-5xl  md:text-7xl text-blue-600 dark:text-red-700">
-                        {"Hello world! I'm Tech."}
-                    </span>
-                    <br />
-                    <span class="motion-safe:animation delay-1s fade-in md:text-4xl">
-                        {"A multi-lingual, multi-disciplinary,"}
+            <div class="grid-cols-2 md:grid-cols-3 flex sm:flex-row flex-col justify-center items-center self-start w-full">
+                <div class="flex flex-col justify-center content-start col-span-2 w-full">
+                    <p class="text-left mt-16 text-xl">
+                        <span class="motion-safe:animation fade-in text-3xl sm:text-5xl  md:text-7xl text-blue-600 dark:text-red-700">
+                            {"Hello world! I'm Tech."}
+                        </span>
+                        <br />
+                        <span class="motion-safe:animation delay-1s fade-in md:text-4xl">
+                            {"A multi-lingual, multi-disciplinary,"}
+                            <br/>
+                            {"and self-taught hobbyist developer."}
+                        </span>
+                    </p>
+                    <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
+                        {"I work on curious projects, with emphasis on discovery and understanding."}
                         <br/>
-                        {"and self-taught hobbyist developer."}
-                    </span>
-                </p>
-                <p class="motion-safe:animation delay-2s fade-in text-left mt-4 text-sm md:text-xl">
-                    {"I work on curious projects, with emphasis on discovery and understanding."}
-                    <br/>
-                    {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
-                </p>
+                        {"Currently making an effort to learn "} <a href="https://www.rust-lang.org/" class="text-blue-600 font-bold dark:text-red-700">{"Rust"}</a>{"."}
+                    </p>
+                </div>
+                <div class="xl:mr-14 md:mr-10 sm:mr-4 mr-0 ">
+                    <img class=" sm:h-60 sm:w-60 mt-4 h-32 w-32 self-start animation delay-1s slow fade-in" src="./asset/terminal-hand-drawn-symbol-svgrepo-com.svg" />
+                </div>
             </div>
-        </div>
-        <div class="self-center motion-safe:animation delay-3s fade-in mt-8">
-            <a href="#projects">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
-                    class="h-20 w-20" alt="scroll down" />
-            </a>
-        </div>
-    </section>
+            <div class="self-center motion-safe:animation delay-3s fade-in mt-8">
+                <a href="#projects">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Arrow-down.svg"
+                        class="h-20 w-20" alt="scroll down" />
+                </a>
+            </div>
+        </section>
     }
 }
 
 #[function_component(Projects)]
 pub fn projects() -> Html {
     html! {
-        <section id="projects" class="section-commons px-8 sm:px-12 lg:px-32 flex flex-col justify-center items-center text-center">
+        <section id="projects" class="section-commons h-[200vh] px-8 sm:px-12 lg:px-32 flex flex-col justify-center items-center text-center">
             <span class="text-2xl sm:text-4xl text-blue-600 dark:text-red-700">{"Checkout my projects!"}</span>
+            <div class="h-[70vh] w-full bg-green-400">
+            </div>
+            <div class="h-[70vh] w-full bg-red-400">
+            </div>
             <div class="motion-safe:animation delay-1s fade-in mt-8">
                 <a class="btn-primary block motion-safe:animation delay-1s animate-bounce" href="https://github.com/TechTheAwesome">
                     {"Find out more on github."}
@@ -120,6 +127,7 @@ pub fn technologies() -> Html {
     html! {
         <section id="technologies" class="section-commons px-8 sm:px-12 lg:px-32 flex flex-col justify-center content-center text-center">
         <span class="text-2xl sm:text-4xl text-blue-600 dark:text-red-700">{"Technologies I love"}</span>
+        <span class="text-base text-black dark:text-white">{"In no particular order"}</span>
         <ul class="flex flex-row flex-wrap justify-center content-center animation fade-in delay-2s" >
             <li class="m-2">
                 <a href="https://www.python.org/">
